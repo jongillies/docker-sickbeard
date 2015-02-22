@@ -13,9 +13,10 @@ docker build -t sickbeard .
 docker run -d \
     -v $SICKBEARD_CONFIG:/config  \
     -v $SICKBEARD_DATA:/data \
-    -v $SICKBEARD_COMPLETE:/complete \
+    -v $SABNZDB_COMPLETE:/complete \
+    -v $TRANSMISSION_MOVIES_WATCH:/torrents
     -v $TV_LIBRARY_DIR:/tv \
-    -p 8081:8081 --name sickbeard sickbeard
+    -p 8081:8081 --name sickbeard supercoder/sickbeard
 
 Bring up the web interface and navigate to Config/Post Processing
 
